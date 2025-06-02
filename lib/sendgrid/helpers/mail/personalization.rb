@@ -82,7 +82,7 @@ module SendGrid
       additional_email = addition.email.downcase
 
       [@tos, @ccs, @bccs].flatten.each do |elm|
-        return true if elm && elm.dig('email') && elm.dig('email').downcase == additional_email
+        return true if elm && elm['email'] && elm['email'].downcase == additional_email
       end
 
       false
